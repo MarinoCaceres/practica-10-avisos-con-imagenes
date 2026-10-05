@@ -29,7 +29,6 @@ object ImagenesModule {
     @Singleton
     fun imageLoader(@ApplicationContext context: Context, cliente: OkHttpClient): ImageLoader =
         ImageLoader.Builder(context)
-            .components { add(OkHttpNetworkFetcherFactory(callFactory = { cliente })) }
             .crossfade(true)
             .build()
 }
