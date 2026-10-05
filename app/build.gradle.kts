@@ -77,7 +77,8 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
 
-    // Imágenes: Coil las baja y las pinta, con el mismo cliente que todo lo demás
+    // Imágenes: Coil las baja y las pinta; ExifInterface lee cómo venía girada la foto
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+    implementation(libs.androidx.exifinterface)
 }
