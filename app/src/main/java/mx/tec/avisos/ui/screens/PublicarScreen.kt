@@ -34,6 +34,7 @@ import mx.tec.avisos.ui.components.TarjetaAviso
 import mx.tec.avisos.ui.state.PublicarUiState
 import mx.tec.avisos.ui.theme.AvisosTema
 import mx.tec.avisos.ui.theme.AvisosTheme
+import mx.tec.avisos.R
 
 /**
  * Escribir un aviso. La pieza nueva es la vista previa: es la MISMA
@@ -49,6 +50,7 @@ fun PublicarScreen(
     onTituloChange: (String) -> Unit,
     onCuerpoChange: (String) -> Unit,
     onGaleria: () -> Unit,
+    onCamara: () -> Unit,
     onQuitarImagen: () -> Unit,
     onPublicar: () -> Unit,
     onCancelar: () -> Unit,
@@ -109,10 +111,10 @@ fun PublicarScreen(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(espaciado.sm)
             ) {
-                OutlinedButton(onClick = onGaleria, enabled = !uiState.enviando) {
-                    Icon(painterResource(R.drawable.ic_galeria), contentDescription = null, modifier = Modifier.size(18.dp))
+                OutlinedButton(onClick = onCamara, enabled = !uiState.enviando) {
+                    Icon(painterResource(R.drawable.ic_camara), contentDescription = null, modifier = Modifier.size(18.dp))
                     Spacer(Modifier.width(espaciado.sm))
-                    Text("Galería")
+                    Text("Cámara")
                 }
                 if (uiState.imagen != null) {
                     TextButton(onClick = onQuitarImagen, enabled = !uiState.enviando) { Text("Quitar") }
